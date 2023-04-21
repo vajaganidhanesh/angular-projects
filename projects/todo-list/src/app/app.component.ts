@@ -27,10 +27,10 @@ export class AppComponent {
   }
 
   addItem(description: any) {
-    // this.allItems.unshift({
-    //   description,
-    //   done: false,
-    // });
+    this.allItems.unshift({
+      description: description.User,
+      done: description.bool,
+    });
     console.log(description);
   }
 }

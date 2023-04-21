@@ -20,6 +20,15 @@
           name="User"
         />
       </dd>
+      <dd>
+        <input type="checkbox" ngModel #bool="ngModel" name="bool" />
+        <span class="fw-bold">Select</span>
+      </dd>
+      <dd>
+        <button class="btn btn-primary" (click)="addItem(frmDetails.value)">
+          add
+        </button>
+      </dd>
     </dl>
   </form>
 </div>
