@@ -1,4 +1,4 @@
-<div class="main">
+<!-- <div class="main">
   <h1>My To Do List</h1>
   <h2>What would you like to do today?</h2>
 
@@ -31,4 +31,18 @@
       </dd>
     </dl>
   </form>
-</div>
+</div> -->
+
+<ul>
+  <li *ngFor="let item of myData">
+    {{ item.name }}:
+    <ul *ngFor="let value of item.values">
+      <select name="" id="">
+        <option value=""></option>
+        <option value="{{ value.pvalue1 }}">1</option>
+        <option value="{{ value.pvalue2 }}">2</option>
+        <option value="{{ value.pvalue3 }}">3</option>
+      </select>
+    </ul>
+  </li>
+</ul>
