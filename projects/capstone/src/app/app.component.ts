@@ -8,6 +8,7 @@ import { crudOperation } from '../services/crudoperations.service';
 })
 export class AppComponent implements OnInit {
   public ProductData: any = [];
+  public loader: boolean = false;
   constructor(private crud: crudOperation) {}
   ngOnInit(): void {
     this.getData();
@@ -21,12 +22,13 @@ export class AppComponent implements OnInit {
   }
 
   delete(id: number): void {
-    console.log(id);
+    this.loader = true;
     this.crud.deleteMethod(id).subscribe(
       (data) => {
         this.ProductData = this.ProductData.filter(
           (product: { id: number }) => product.id !== id
         );
+        this.loader = false;
       },
       (error) => {
         console.log(error);
