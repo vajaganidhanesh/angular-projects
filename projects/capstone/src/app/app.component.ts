@@ -15,10 +15,12 @@ export class AppComponent implements OnInit {
   }
 
   getData() {
+    this.loader = true;
     this.crud.GetMethod().subscribe((data) => {
       console.log(data);
       this.ProductData = data;
     });
+    this.loader = false;
   }
 
   delete(id: number): void {

@@ -1,33 +1,30 @@
 <div class="container-fluid">
+  <div *ngIf="loader">
+    <app-loader></app-loader>
+  </div>
   <div class="row p-3">
     <div
       class="col d-flex flex-wrap gap-3 justify-content-center align-content-center"
     >
-      <div *ngIf="loader; then loading; else productDetails"></div>
-      <ng-template #loading>
-        <app-loader></app-loader>
-      </ng-template>
-      <ng-template #productDetails>
-        <div
-          class="card w-25 justify-content-center align-items-center"
-          *ngFor="let item of ProductData"
-        >
-          <div class="card-title">
-            <div class="p-3">
-              {{ item.title }}
-            </div>
-          </div>
-          <div class="card-body">
-            <img src="{{ item.image }}" class="img-fluid" alt="body-image" />
-          </div>
-          <div class="btn-group pb-3">
-            <button class="btn btn-danger" (click)="delete(item.id)">
-              delete
-            </button>
-            <button class="btn btn-success">update</button>
+      <div
+        class="card w-25 justify-content-center align-items-center"
+        *ngFor="let item of ProductData"
+      >
+        <div class="card-title">
+          <div class="p-3">
+            {{ item.title }}
           </div>
         </div>
-      </ng-template>
+        <div class="card-body">
+          <img src="{{ item.image }}" class="img-fluid" alt="body-image" />
+        </div>
+        <div class="btn-group pb-3">
+          <button class="btn btn-danger" (click)="delete(item.id)">
+            delete
+          </button>
+          <button class="btn btn-success">update</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
