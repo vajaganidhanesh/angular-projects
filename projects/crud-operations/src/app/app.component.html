@@ -1,1 +1,42 @@
+<div class="container m-5">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-6">
+      <table class="table table-hover">
+        <thead class="">
+          <th class="text-center">Sl.No</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Weight</th>
+          <th class="text-center">Symbol</th>
+          <th class="text-center">Actions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let items of data">
+            <td class="text-center">{{ items.position }}</td>
+            <td class="text-center">{{ items.name }}</td>
+            <td class="text-center">{{ items.weight }}</td>
+            <td class="text-center">{{ items.symbol }}</td>
+            <td class="text-center">
+              <button class="btn btn-danger me-2">
+                <span class="bi bi-trash-fill text-light"></span>
+              </button>
+              <button class="btn btn-primary me-2" (click)="viewData()">
+                <span class="bi bi-eye-fill"></span>
+              </button>
+              <button class="btn btn-success">
+                <span class="bi bi-pen"></span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
+    <div *ngIf="view">
+      <div class="viewContainer" (click)="viewData()">
+        <router-outlet>
+          <app-view-data></app-view-data>
+        </router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

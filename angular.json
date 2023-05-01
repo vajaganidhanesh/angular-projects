@@ -207,6 +207,7 @@
               "projects/crud-operations/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/crud-operations/src/styles.css"
             ],
             "scripts": []
@@ -269,6 +270,7 @@
               "projects/crud-operations/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/crud-operations/src/styles.css"
             ],
             "scripts": []
