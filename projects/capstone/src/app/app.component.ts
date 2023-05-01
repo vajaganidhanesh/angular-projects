@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { crudOperation } from '../services/crudoperations.service';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,9 @@ export class AppComponent implements OnInit {
   public loader: boolean = false;
   constructor(private crud: crudOperation) {}
   ngOnInit(): void {
+    this.loader = true;
     this.getData();
+    this.loader = false;
   }
 
   getData() {

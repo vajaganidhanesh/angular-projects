@@ -22,7 +22,9 @@
           <button class="btn btn-danger" (click)="delete(item.id)">
             delete
           </button>
-          <button class="btn btn-success">update</button>
+          <a routerLink="/details/{{ item.id }}" class="btn btn-secondary"
+            >Details</a
+          >
         </div>
       </div>
     </div>

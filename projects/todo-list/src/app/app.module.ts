@@ -19,6 +19,6 @@ import { MovieComponent } from './components/movie/movie.component';
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [HomeComponent],
 })
 export class AppModule {}

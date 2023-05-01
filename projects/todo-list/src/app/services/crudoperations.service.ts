@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { productData } from '../contract/data';
+import { productData } from '../contracts/data';
 
 @Injectable()
 export class crudOperation {
