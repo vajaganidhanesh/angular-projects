@@ -19,7 +19,10 @@
               <button class="btn btn-danger me-2">
                 <span class="bi bi-trash-fill text-light"></span>
               </button>
-              <button class="btn btn-primary me-2" (click)="viewData()">
+              <button
+                class="btn btn-primary me-2"
+                (click)="handleChildData(items)"
+              >
                 <span class="bi bi-eye-fill"></span>
               </button>
               <button class="btn btn-success">
@@ -33,9 +36,9 @@
 
     <div *ngIf="view">
       <div class="viewContainer" (click)="viewData()">
-        <router-outlet>
-          <app-view-data></app-view-data>
-        </router-outlet>
+        <div class="viewContainerModel" (click)="handleButtonClick($event)">
+          <app-view-data [value]="selectedValue"></app-view-data>
+        </div>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@ import { ProductType } from '../contracts/product';
 export class AppComponent {
   public data: ProductType[] = [];
   public view: boolean = false;
+  selectedValue: any;
 
   constructor(private dataService: crudService) {}
   ngOnInit() {
@@ -24,5 +25,15 @@ export class AppComponent {
     } else {
       this.view = false;
     }
+  }
+
+  handleButtonClick(event: MouseEvent) {
+    console.log('Button clicked');
+    event.stopPropagation(); // Stop propagation here
+  }
+
+  handleChildData(value: any): void {
+    this.selectedValue = value;
+    this.viewData();
   }
 }

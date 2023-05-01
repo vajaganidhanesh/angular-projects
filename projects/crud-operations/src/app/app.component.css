@@ -10,3 +10,8 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
+.viewContainerModel {
+  min-width: 30%;
+  min-height: 30%;
+  background-color: #fff;
+}
