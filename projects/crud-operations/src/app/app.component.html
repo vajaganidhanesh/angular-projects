@@ -35,11 +35,14 @@
     </div>
 
     <div *ngIf="view">
-      <div class="viewContainer" (click)="viewData()">
+      <div class="viewContainer position" (click)="viewData()">
         <div class="viewContainerModel" (click)="handleButtonClick($event)">
+          <span class="bi bi-x-circle-fill close" (click)="viewData()"></span>
           <app-view-data [value]="selectedValue"></app-view-data>
         </div>
       </div>
     </div>
+
+    <div></div>
   </div>
 </div>
