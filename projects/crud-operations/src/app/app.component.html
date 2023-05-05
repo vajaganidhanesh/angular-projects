@@ -57,7 +57,7 @@
               >
                 <span class="bi bi-eye-fill"></span>
               </button>
-              <button class="btn btn-success">
+              <button class="btn btn-success" (click)="handleUpdateData(items)">
                 <span class="bi bi-pen"></span>
               </button>
             </td>
@@ -75,6 +75,16 @@
       </div>
     </div>
 
-    <div *ngIf=""></div>
+    <div *ngIf="updateView">
+      <div class="viewContainer position" (click)="viewUpdate()">
+        <div class="viewContainerModel" (click)="handleButtonClick($event)">
+          <span class="bi bi-x-circle-fill close" (click)="viewUpdate()"></span>
+          <app-new-item
+            [element]="updateValue"
+            (dataEvent)="handleDataUpdate($event)"
+          ></app-new-item>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

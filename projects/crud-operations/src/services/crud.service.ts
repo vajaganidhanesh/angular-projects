@@ -23,4 +23,10 @@ export class crudService {
     const deleteUrl = `${this.apiURL}/${Id}`;
     return this.http.delete<ProductType>(deleteUrl);
   }
+
+  update(item: any): Observable<ProductType> {
+    const id = item.id;
+    const url = `${this.apiURL}/${id}`;
+    return this.http.put<ProductType>(`${url}`, item);
+  }
 }

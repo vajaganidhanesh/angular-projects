@@ -1,1 +1,54 @@
-<p>new-item works!</p>
+<div class="p-4">
+  <div class="card p-1">
+    <div class="card-header fs-1 p-3">Update Details</div>
+    <dl class="p-1">
+      <dt>Position</dt>
+      <dd>
+        <input
+          type="number"
+          [defaultValue]="id"
+          [(ngModel)]="id"
+          class="form-control"
+        />
+      </dd>
+      <dt>Name</dt>
+      <dd>
+        <input
+          type="text"
+          name=""
+          [defaultValue]="name"
+          [(ngModel)]="name"
+          id=""
+          class="form-control"
+        />
+      </dd>
+      <dt>Weight</dt>
+      <dd>
+        <input
+          type="number"
+          [defaultValue]="weight"
+          [(ngModel)]="weight"
+          class="form-control"
+        />
+      </dd>
+      <dt>Symbol</dt>
+      <dd>
+        <input
+          type="text"
+          [value]="symbol"
+          [(ngModel)]="symbol"
+          name=""
+          id=""
+          class="form-control"
+        />
+      </dd>
+      <button
+        type="button"
+        (click)="handleUpdateData()"
+        class="btn btn-primary w-100"
+      >
+        Update
+      </button>
+    </dl>
+  </div>
+</div>

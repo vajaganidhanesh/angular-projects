@@ -47,6 +47,12 @@
       "name": "Hydrogen",
       "weight": 2.34234,
       "symbol": "H"
+    },
+    {
+      "id": 11,
+      "name": "Sodium",
+      "weight": 2.4545,
+      "symbol": "Na"
     }
   ]
 }
