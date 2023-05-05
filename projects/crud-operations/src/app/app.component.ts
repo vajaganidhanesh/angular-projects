@@ -10,7 +10,13 @@ import { ProductType } from '../contracts/product';
 export class AppComponent {
   public data: ProductType[] = [];
   public view: boolean = false;
-  selectedValue: any;
+  public selectedValue: any;
+  public formData: any = {
+    id: 0,
+    name: '',
+    weight: '',
+    symbol: '',
+  };
 
   constructor(private dataService: crudService) {}
   ngOnInit() {
@@ -35,5 +41,23 @@ export class AppComponent {
   handleChildData(value: any): void {
     this.selectedValue = value;
     this.viewData();
+  }
+
+  addData() {
+    console.log(this.formData);
+
+    this.dataService.addItem(this.formData).subscribe((data) => {
+      console.log(data);
+      this.data.push(data);
+    });
+  }
+
+  deleteItem(id: number) {
+    console.log(id);
+
+    this.dataService.delete(id).subscribe((data) => {
+      console.log(data);
+      this.data = this.data.filter((product) => product.id !== id);
+    });
   }
 }

@@ -1,5 +1,5 @@
 export interface ProductType {
-  position: number;
+  id: number;
   name: string;
   weight: number;
   symbol: string;

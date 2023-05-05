@@ -1,6 +1,35 @@
 <div class="container m-5">
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-6">
+      <div class="d-flex justify-content-center m-3">
+        <input
+          class="form-control me-2"
+          [(ngModel)]="formData.id"
+          type="number"
+          placeholder="Sl.No"
+        />
+        <input
+          class="form-control me-2"
+          type="text"
+          placeholder="Name"
+          [(ngModel)]="formData.name"
+        />
+        <input
+          class="form-control me-2"
+          type="number"
+          placeholder="weight"
+          [(ngModel)]="formData.weight"
+        />
+        <input
+          class="form-control me-2"
+          type="text"
+          placeholder="Symbol"
+          [(ngModel)]="formData.symbol"
+        />
+        <button type="button" class="btn btn-success" (click)="addData()">
+          Add
+        </button>
+      </div>
       <table class="table table-hover">
         <thead class="">
           <th class="text-center">Sl.No</th>
@@ -10,13 +39,16 @@
           <th class="text-center">Actions</th>
         </thead>
         <tbody>
-          <tr *ngFor="let items of data">
-            <td class="text-center">{{ items.position }}</td>
+          <tr *ngFor="let items of data; let i = index">
+            <td class="text-center">{{ i + 1 }}</td>
             <td class="text-center">{{ items.name }}</td>
             <td class="text-center">{{ items.weight }}</td>
             <td class="text-center">{{ items.symbol }}</td>
             <td class="text-center">
-              <button class="btn btn-danger me-2">
+              <button
+                class="btn btn-danger me-2"
+                (click)="deleteItem(items.id)"
+              >
                 <span class="bi bi-trash-fill text-light"></span>
               </button>
               <button
@@ -43,6 +75,6 @@
       </div>
     </div>
 
-    <div></div>
+    <div *ngIf=""></div>
   </div>
 </div>
