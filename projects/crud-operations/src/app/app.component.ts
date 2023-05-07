@@ -71,6 +71,7 @@ export class AppComponent {
   }
 
   handleDataUpdate(data: any) {
+    this.updateView = false;
     this.dataService.update(data).subscribe((data) => {
       const index = this.data.findIndex((obj) => obj.id === data.id);
       this.data[index] = data;
